@@ -1,0 +1,366 @@
+{
+	"variables": [],
+	"info": {
+		"name": "SalesForce Auth",
+		"_postman_id": "2674b3ec-d410-b18c-96f3-bec96a5edcc4",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Access Token",
+			"request": {
+				"url": {
+					"raw": "https://login.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9ZL0ppGP5UrDXFilQ2bj1wxh4cWXx2.K0U3rNglPS3TmhRFHfm3hJZiLG9H1mv6xYsRAJ4lu5C9ST6PK1&client_secret=E259B718DFA2C61804F7CC1283579CCE299C46557CE4B77B4A731FE9A04459E7&username=bpi@teamlease.com&password=LASTDAY@1122",
+					"protocol": "https",
+					"host": [
+						"login",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"oauth2",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "password"
+						},
+						{
+							"key": "client_id",
+							"value": "3MVG9ZL0ppGP5UrDXFilQ2bj1wxh4cWXx2.K0U3rNglPS3TmhRFHfm3hJZiLG9H1mv6xYsRAJ4lu5C9ST6PK1"
+						},
+						{
+							"key": "client_secret",
+							"value": "E259B718DFA2C61804F7CC1283579CCE299C46557CE4B77B4A731FE9A04459E7"
+						},
+						{
+							"key": "username",
+							"value": "bpi@teamlease.com"
+						},
+						{
+							"key": "password",
+							"value": "LASTDAY@1122"
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Case Details",
+			"request": {
+				"url": {
+					"raw": "https://teamlease.my.salesforce.com/services/data/v56.0/query?q=SELECT+id+from+Case+WHERE+id='5001000000xHIWIAA4'",
+					"protocol": "https",
+					"host": [
+						"teamlease",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v56.0",
+						"query"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "SELECT+id+from+Case+WHERE+id='5001000000xHIWIAA4'"
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 00D280000018oCD!ARUAQHLeEOlCZD1dc0mqyatlWjvDbveJ2yOcRjdjNWUQjy3MLOwZVpEF21G.4kuPV0wSXopaoiEdA27XH5Xn1Mcrv_tDa9pW",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Case with Email",
+			"request": {
+				"url": {
+					"raw": "https://teamlease.my.salesforce.com/services/data/v56.0/query?q=SELECT+id,(select+id+from +Attachments)+from+EmailMessage+WHERE+id='02s2x00000I0NuGAAV'",
+					"protocol": "https",
+					"host": [
+						"teamlease",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v56.0",
+						"query"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "SELECT+id,(select+id+from +Attachments)+from+EmailMessage+WHERE+id='02s2x00000I0NuGAAV'",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 00D280000018oCD!ARUAQHLeEOlCZD1dc0mqyatlWjvDbveJ2yOcRjdjNWUQjy3MLOwZVpEF21G.4kuPV0wSXopaoiEdA27XH5Xn1Mcrv_tDa9pW",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Case with Email and activity",
+			"request": {
+				"url": {
+					"raw": "https://teamlease.my.salesforce.com/services/data/v56.0/query?q=SELECT+id+from+Case+WHERE+id='5001000000xHIWIAA4'",
+					"protocol": "https",
+					"host": [
+						"teamlease",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v56.0",
+						"query"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "SELECT+id+from+Case+WHERE+id='5001000000xHIWIAA4'"
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 00D280000018oCD!ARUAQHLeEOlCZD1dc0mqyatlWjvDbveJ2yOcRjdjNWUQjy3MLOwZVpEF21G.4kuPV0wSXopaoiEdA27XH5Xn1Mcrv_tDa9pW",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Email content",
+			"request": {
+				"url": "https://teamlease.my.salesforce.com/services/data/v56.0/sobjects/EmailMessage/02s2x00000He76jAAB",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 00D280000018oCD!ARUAQHLeEOlCZD1dc0mqyatlWjvDbveJ2yOcRjdjNWUQjy3MLOwZVpEF21G.4kuPV0wSXopaoiEdA27XH5Xn1Mcrv_tDa9pW",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Case Details Query",
+			"request": {
+				"url": "https://teamlease.my.salesforce.com/services/data/v56.0/sobjects/case/5002x00000W5M9TAAV/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 00D280000018oCD!ARUAQHLeEOlCZD1dc0mqyatlWjvDbveJ2yOcRjdjNWUQjy3MLOwZVpEF21G.4kuPV0wSXopaoiEdA27XH5Xn1Mcrv_tDa9pW",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Attachment",
+			"request": {
+				"url": "https://teamlease.my.salesforce.com/services/data/v56.0/sobjects/Attachment/00P2x00000O8YpgEAF/Body",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 00D280000018oCD!ARUAQHLeEOlCZD1dc0mqyatlWjvDbveJ2yOcRjdjNWUQjy3MLOwZVpEF21G.4kuPV0wSXopaoiEdA27XH5Xn1Mcrv_tDa9pW",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Attachment LIst",
+			"request": {
+				"url": {
+					"raw": "https://teamlease.my.salesforce.com/services/data/v56.0/query?q=SELECT+id,(select+id+from +Attachments)+from+EmailMessage+WHERE+id='02s2x00000I0NuGAAV'",
+					"protocol": "https",
+					"host": [
+						"teamlease",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v56.0",
+						"query"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "SELECT+id,(select+id+from +Attachments)+from+EmailMessage+WHERE+id='02s2x00000I0NuGAAV'",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 00D280000018oCD!ARUAQOVHNoeuBJEOY.eReAV_rK0_C.LHPGFbK_j0EeAKZVBrXcUbn.C9TFafYEDtpkpK205cOHVQonnCBt4IDitjdHTY9LIh",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Email LIst based on Case",
+			"request": {
+				"url": {
+					"raw": "https://teamlease.my.salesforce.com/services/data/v56.0/query?q=SELECT+id,(select+id+from +EmailMessages)+from+Case+WHERE+id='5002x00000W5M9T'",
+					"protocol": "https",
+					"host": [
+						"teamlease",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v56.0",
+						"query"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "SELECT+id,(select+id+from +EmailMessages)+from+Case+WHERE+id='5002x00000W5M9T'",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 00D280000018oCD!ARUAQOVHNoeuBJEOY.eReAV_rK0_C.LHPGFbK_j0EeAKZVBrXcUbn.C9TFafYEDtpkpK205cOHVQonnCBt4IDitjdHTY9LIh",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "List activities linked with Case",
+			"request": {
+				"url": {
+					"raw": "https://teamlease.my.salesforce.com/services/data/v56.0/query?q=SELECT+id,(select+id+from +ActivityHistories)+from+Case+WHERE+id='5002x00000RYfem'",
+					"protocol": "https",
+					"host": [
+						"teamlease",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v56.0",
+						"query"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "SELECT+id,(select+id+from +ActivityHistories)+from+Case+WHERE+id='5002x00000RYfem'",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 00D280000018oCD!ARUAQOVHNoeuBJEOY.eReAV_rK0_C.LHPGFbK_j0EeAKZVBrXcUbn.C9TFafYEDtpkpK205cOHVQonnCBt4IDitjdHTY9LIh",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
